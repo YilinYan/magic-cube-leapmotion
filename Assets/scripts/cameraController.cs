@@ -34,7 +34,7 @@ public class cameraController : MonoBehaviour {
 		transform.RotateAround(Vector3.zero,Vector3.left, (float)vert);
 		transform.Rotate (new Vector3 ((float)vert, (float)hori, 0));
 		//主Camera动作  
-		if (Input.GetAxis ("Mouse ScrollWheel") != 0) {
+        if (Mathf.Abs(Input.GetAxis ("Mouse ScrollWheel")) > 0.01f) {
 			cameraDistance = -Input.GetAxis ("Mouse ScrollWheel") * 2f;  
 			//cameraDistance = Mathf.Clamp ((float)cameraDistance, (float)2, (float)0.5);
 			Vector3 tmp = (Vector3)transform.localPosition;
